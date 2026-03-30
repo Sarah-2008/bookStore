@@ -1,0 +1,7 @@
+moongoose - banco de dados, leva as informações necessárias
+dotenv - guarda a informação que foram coletadas
+jsonwebtoken - autenticação, dados, conta, registro, login
+cloudinary - organiza as imagens, anexa e salva elas
+bcryptjs - camada de segurança, para que não fique fácil de descobrir informações, trandforma em linguagem de máquina
+cors - evita bugs
+npm i nodemon -D - faz o sistema rodar

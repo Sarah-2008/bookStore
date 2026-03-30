@@ -1,0 +1,15 @@
+import express from "express"
+import "dotenv/config"
+import authRoutes from "./routes/authRoutes.js"
+
+import authRoutes from "./routes/authRoutes.js"
+
+const app = express();
+const PORT = process.env.PORT || 3000
+
+app.use("/api/auth", authRoutes);
+
+app.listen(PORT, () => {
+    console.log("Server está rodando na porta 3000");
+    // esse 3000 serve para ser o teste do aplicativo
+})
