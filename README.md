@@ -181,14 +181,3 @@ DB_PASSWORD=senha_forte_real
 ```
 
 ---
-
-## ✅ Conclusão
-
-Esses conceitos são fundamentais para:
-
-* Processamento correto de requisições (middleware)
-* Escolha adequada de banco de dados (NoSQL vs SQL)
-* Proteção de dados sensíveis (hashing)
-* Segurança e organização de configurações (.env)
-
----
