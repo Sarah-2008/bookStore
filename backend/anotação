@@ -1,4 +1,4 @@
-moongoose - banco de dados, leva as informações necessárias
+mongoose - banco de dados, leva as informações necessárias
 dotenv - guarda a informação que foram coletadas
 jsonwebtoken - autenticação, dados, conta, registro, login
 cloudinary - organiza as imagens, anexa e salva elas
