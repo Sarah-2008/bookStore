@@ -1,0 +1,104 @@
+atividade de pesquisa
+
+O que são tipos de dados e constraints no Postman mesmo?
+
+No Postman, eles usam JSON Schema, para, tipo, definir um “contrato” dos dados da API. Nesse contrato tá especificado:
+
+Tipos de dados: tipo string, integer, boolean, array, object, e tals.
+Constraints ou restrições:
+minimum / maximum, aqueles limites numéricos
+minLength / maxLength, pro tamanho do texto
+pattern pra regex
+format tipo email
+required, os campos obrigatórios
+
+Esse schema descreve, sabe, exatamente como os dados tem que ser estruturados e validados
+
+Como funciona isso na prática no Postman, hein?
+
+No Postman, dá pra validar requisições e respostas usando esse schema, sabe? Automaticamente!
+
+Um exemplo prático:
+
+pm. response. to. have. jsonSchema(schema)
+
+Quando a requisição é feita:
+
+O Postman compara o JSON com o schema.
+Se tiver tudo certinho → o teste passa.
+Se tiver errado → o teste já falha!
+
+Isso cria uma camada de validação antes da aplicação rodar, saca?
+
+Na documentação diz que isso ajuda a “capturar erros antes que cheguem ao código ou banco de dados”.
+
+Tipo, a primeira linha de defesa contra dados inválidos.
+
+Essas validações são um filtro inicial, tipo, impedindo que dados zuados avancem.
+
+Um exemplo: idade negativa
+"age": {
+"type": "integer",
+"minimum": 0
+}
+
+Aceita: 25
+Rejeita: -10
+
+Mais um exemplo: email inválido
+"email": {
+"type": "string",
+"format": "email"
+}
+
+Aceita: user@email.
+Rejeita: useremail
+
+Exemplo: controle de duplicidade indireto
+
+Embora o Postman, na verdade, num impeça a duplicidade direta no banco ele:
+
+Valida o formato do dado com certeza
+Assegura a consistência das requisições
+Testa cenários de erro, tipo email já existente
+
+Em outras palavras, ele ajuda a assegurar que o backend lide com os casos como email duplicado, corretamente
+
+A relação com um app React Native
+
+Sem validação:
+
+Dados inválidos chegam ao backend
+Podem causar erros no MongoDB.
+Podem quebrar o app ou seja um comportamento inesperado
+
+Com validação no Postman:
+
+Dados inválidos são barrados antes da integração
+A API se mantém consistente, sempre
+O frontend React Native recebe sempre dados previsíveis
+
+Com isso se reduz bugs, evitando também problemas difíceis de depurar
+
+Porque isso é crucial
+
+O uso de constraints e tipos de dados:
+
+Garante a integridade dos dados, por certo
+Cria um contrato claro entre frontend e backend, sem dúvidas
+Evita erros na produção, sem falar
+Reduz a necessidade de validações manuais, diminuindo
+Melhora a confiabilidade da API, isso sim
+
+Como resultado, o Postman deixa de ser meramente uma ferramenta de testes, atua também como uma camada preventiva de qualidade dos dados
+
+Conclusão
+
+Constraints e tipos de dados no Postman agem como um sistema de validação adiantada, garantindo que:
+
+Apenas dados válidos entrem no sistema
+Problemas como idade negativa, email inválido, sejam detectados cedo
+O aplicativo React Native, num quebre por inconsistências
+
+Simplificando:
+Eles protegem toda aplicação validando os dados antes, muito antes, de chegar no código real.
