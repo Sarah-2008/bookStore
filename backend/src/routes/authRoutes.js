@@ -49,6 +49,7 @@ router.get("/register", async (req, res) => {
         await user.save();
 
         const token = generateToken(user._id)
+        // token de login do usuário
 
         res.status(201).json({
             token , 
