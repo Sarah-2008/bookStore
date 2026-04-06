@@ -181,3 +181,25 @@ DB_PASSWORD=senha_forte_real
 ```
 
 ---
+
+🔐 Signup Workflow (React Native + Node.js + MongoDB)
+
+O processo de cadastro de usuário segue este fluxo:
+
+Frontend (React Native)
+O usuário preenche os campos username, email e password e envia os dados via requisição HTTP (POST) para o backend.
+Backend (Node.js + Express)
+Valida os dados recebidos
+Verifica se o email já está cadastrado
+Criptografa a senha usando bcrypt
+Cria o usuário no banco de dados
+Banco de Dados (MongoDB)
+Armazena o usuário com a senha criptografada.
+Resposta
+O backend retorna sucesso ou erro, e o app trata essa resposta (ex: login automático ou mensagem).
+
+---
+
+🔒 Segurança
+Senhas são armazenadas com hash (bcrypt)
+Nunca salvar senha em texto puro
