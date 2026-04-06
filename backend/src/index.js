@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3000
 
 app.use("/api/auth", authRoutes);
 
+app.use(express.json())
+
 app.listen(PORT, () => {
     console.log("Server está rodando na porta 3000");
     // esse 3000 serve para ser o teste do aplicativo
