@@ -203,3 +203,24 @@ O usuário preenche os campos username, email e password e envia os dados via re
 **🔒 Segurança**
 * Senhas são armazenadas com hash (bcrypt)
 * Nunca salvar senha em texto puro
+
+---
+
+### Validação com Constraints e Tipos de Dados no Postman
+
+No Postman, tipos de dados e constraints (restrições) funcionam como uma primeira camada de teste para garantir a integridade dos dados da API.
+
+* **Tipos de dados (string, number, boolean, etc.)** asseguram que cada campo tenha o formato correto.
+* **Constraints (minimum, format, required, pattern, etc.)** definem regras adicionais, como:
+* impedir valores inválidos (ex: idade negativa)
+* validar formatos (ex: e-mail válido)
+* garantir campos obrigatórios
+* evitar duplicações
+
+Essas validações são feitas via JSON Schema nos testes do Postman, bloqueando respostas inválidas antes que cheguem ao app.
+
+### ✅ Benefícios:
+
+* Evita que dados incorretos quebrem o React Native
+* Garante consistência entre backend e frontend
+* Reduz bugs e validações duplicadas no app
